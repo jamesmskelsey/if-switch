@@ -11,28 +11,19 @@ for the different possibilities.
 
 */
 
-const { randomNumber, sendMessage } = require("./common");
+const { Orange } = require("./components/Orange");
+const { Papaya } = require("./components/Papaya");
 
-// Pick a message and "send it"
-const messenger = (num) => {
-  if (num <= 20) {
-    sendMessage(`${num}: That's a small number.`);
-  } else if (num <= 40 && num > 20) {
-    sendMessage(`${num}: Less than 40, more than 20.`);
-  } else if (num <= 60 && num > 40) {
-    sendMessage(`${num}: Oh we're halfway there!`);
-  } else if (num <= 80 && num > 60) {
-    sendMessage(
-      `${num}: Almost full. Or something. It doesn't have to make sense.`
-    );
+const app = () => {
+  const display = "Orange";
+
+  if (display === "Orange") {
+    return new Orange().render();
+  } else if (display === "Papaya") {
+    return new Papaya().render();
   } else {
-    sendMessage(
-      `${num}: It must be more than 80. Don't know about less than 100 though.`
-    );
+    return "Select an option.";
   }
 };
 
-let i = 10;
-while (i-- > 0) {
-  messenger(randomNumber());
-}
+console.log(app());

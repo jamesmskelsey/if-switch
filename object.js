@@ -1,3 +1,15 @@
-const { randomNumber, sendMessage } = require("./common");
+const { Orange } = require("./components/Orange");
+const { Papaya } = require("./components/Papaya");
 
-// Example of being able to write a more complex function
+const fruits = {
+  Orange,
+  Papaya,
+};
+
+const app = () => {
+  const display = "Nothing";
+
+  return fruits[display] ? new fruits[display]().render() : "Select an option.";
+};
+
+console.log(app());
