@@ -1,14 +1,5 @@
-class Papaya {
-  render() {
-    return "I'm a papaya component.";
-  }
-}
-
-class Orange {
-  render() {
-    return "I'm an orange component.";
-  }
-}
+const { Papaya } = require("./components/Papaya");
+const { Orange } = require("./components/Orange");
 
 const app = () => {
   const display = "Orange";
